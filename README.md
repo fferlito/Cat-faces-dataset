@@ -1,5 +1,5 @@
 # Cat-faces-dataset
-Dataset containing around 7000 images of cats' faces of size 64x64.
+Dataset containing around 22000 images of cats' faces of size 64x64.
 
 The images were retrieved from 4 different open datasets, namely:
 * Cats and Dogs Breeds Classification Oxford Dataset (https://www.kaggle.com/zippyz/cats-and-dogs-breeds-classification-oxford-dataset)
