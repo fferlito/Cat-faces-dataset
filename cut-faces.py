@@ -1,11 +1,14 @@
 # import the necessary packages
+import os
 import cv2
 import glob
 import numpy as np
 import imutils
 
-path = "/home/federico/Desktop/Deep learning/cat-generator/cat face detector/coco-dataset"
-path_aug = "/home/federico/Desktop/Deep learning/cat-generator/cat face detector/coco-modified-dataset"
+HOME_DIR = os.environ['HOME']
+
+path = f"{HOME_DIR}/Desktop/Deep learning/cat-generator/cat face detector/coco-dataset"
+path_aug = f"{HOME_DIR}/Desktop/Deep learning/cat-generator/cat face detector/coco-modified-dataset"
 
 
 # save all of the file names to a list and
@@ -22,7 +25,7 @@ for folder in folders:
 
 print("\nCat images found: " + np.str(i))
 
-detector = cv2.CascadeClassifier("/home/federico/Desktop/Deep learning/cat-generator/haarcascade_frontalcatface.xml")
+detector = cv2.CascadeClassifier(f"{HOME_DIR}/Desktop/Deep learning/cat-generator/haarcascade_frontalcatface.xml")
 j = 1
 
 print("\nSaving cat faces in:")

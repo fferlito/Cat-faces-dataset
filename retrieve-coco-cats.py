@@ -1,7 +1,10 @@
 from pycocotools.coco import COCO
 import requests
+import os
 
-coco = COCO('/home/federico/Desktop/Deep learning/cat-generator/cocoapi-master/annotations/instances_val2014.json')
+HOME_DIR = os.environ['HOME']
+
+coco = COCO(f'{HOME_DIR}/Desktop/Deep learning/cat-generator/cocoapi-master/annotations/instances_val2014.json')
 cats = coco.loadCats(coco.getCatIds())
 nms=[cat['name'] for cat in cats]
 print('COCO categories: \n{}\n'.format(' '.join(nms)))
@@ -22,5 +25,5 @@ print("\nimages: ", images)
 for im in images:
     print("\nim: ", im)
     img_data = requests.get(im['coco_url']).content
-    with open('/home/federico/Desktop/Deep learning/cat-generator/cocoapi-master/downloaded_images2/' + im['file_name'], 'wb') as handler:
+    with open(f'{HOME_DIR}/Desktop/Deep learning/cat-generator/cocoapi-master/downloaded_images2/' + im['file_name'], 'wb') as handler:
         handler.write(img_data)
